@@ -1,0 +1,149 @@
+.solutions-section {
+  padding: 110px 40px;
+  background: #ffffff;
+}
+
+.solutions-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* TOP */
+.solutions-top {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+  margin-bottom: 70px;
+}
+
+/* TEXT */
+.section-badge {
+  display: inline-flex;
+  padding: 10px 18px;
+  border-radius: 999px;
+  background: #fff1f4;
+  color: #be123c;
+  border: 1px solid #ffd6df;
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.solutions-left h2 {
+  font-size: 46px;
+  line-height: 1.2;
+  color: #0f172a;
+  margin-bottom: 20px;
+}
+
+.solutions-left p {
+  font-size: 17px;
+  line-height: 1.8;
+  color: #475569;
+}
+
+/* PREVIEW */
+.solutions-preview {
+  background: linear-gradient(180deg, #ffffff, #fff7f9);
+  border: 1px solid #f3d4dc;
+  border-radius: 30px;
+  padding: 22px;
+  box-shadow: 0 25px 60px rgba(190, 18, 60, 0.1);
+}
+
+.preview-header {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.preview-header span {
+  width: 12px;
+  height: 12px;
+  background: #be123c;
+  border-radius: 50%;
+  opacity: 0.6;
+}
+
+.preview-body {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 16px;
+}
+
+.preview-card {
+  background: white;
+  border-radius: 20px;
+  padding: 20px;
+}
+
+.preview-card.large {
+  grid-row: span 2;
+}
+
+.preview-card h3 {
+  font-size: 30px;
+  color: #0f172a;
+}
+
+.preview-line {
+  height: 12px;
+  width: 72%;
+  margin-top: 20px;
+  background: linear-gradient(90deg, #be123c, #fda4af);
+  border-radius: 999px;
+}
+
+/* LIST */
+.solutions-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.solution-row {
+  display: grid;
+  grid-template-columns: 80px 1fr 50px;
+  align-items: center;
+  gap: 20px;
+  padding: 25px;
+  border-radius: 20px;
+  border: 1px solid #eef2f7;
+  text-decoration: none;
+  color: inherit;
+  transition: 0.3s;
+}
+
+.solution-row:hover {
+  background: #fff7f9;
+  border-color: #f0b7c5;
+}
+
+.solution-number {
+  color: #be123c;
+  font-weight: bold;
+}
+
+.solution-content h3 {
+  font-size: 22px;
+  margin-bottom: 5px;
+}
+
+.solution-content p {
+  color: #475569;
+  font-size: 14px;
+}
+
+.solution-arrow {
+  text-align: center;
+  font-size: 20px;
+  color: #be123c;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .solutions-top {
+    grid-template-columns: 1fr;
+  }
+}
