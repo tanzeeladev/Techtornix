@@ -67,12 +67,9 @@ const Choose = () => {
 
           <p>
             We combine strategy, design, and modern engineering to create
-            reliable digital products that help businesses move faster.
-          </p>
-
-       
-
-         
+            reliable digital products that help businesses move faster, look
+            better, and perform stronger.
+          </p>      
         </motion.div>
 
         <div className="why-features">

@@ -11,28 +11,39 @@ const stats = [
 
 const Stats = () => {
   return (
-    <section className="stats-section">
-      <motion.div
-        className="impact-panel"
-        initial={{ opacity: 0, y: 35 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.7 }}
-      >
-        <div className="impact-left">
-          <span>Our Impact</span>
-          <h2>Delivering measurable results for businesses</h2>
-        </div>
+    <section className="tt-stats-section">
+      <div className="tt-stats-grid-bg"></div>
 
-        <div className="impact-stats">
-          {stats.map((item, index) => (
-            <div className="impact-item" key={index}>
-              <h3>{item.number}</h3>
-              <p>{item.label}</p>
-            </div>
-          ))}
-        </div>
-      </motion.div>
+      <div className="tt-stats-container">
+        <motion.div
+          className="tt-stats-wrapper"
+          initial={{ opacity: 0, y: 35 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <div className="tt-stats-left">
+            <span>Our Impact</span>
+            <h2>Results built with strategy, design, and clean code</h2>
+          </div>
+
+          <div className="tt-stats-line">
+            {stats.map((item, index) => (
+              <motion.div
+                className="tt-stat-box"
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.45, delay: index * 0.08 }}
+              >
+                <h3>{item.number}</h3>
+                <p>{item.label}</p>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+      </div>
     </section>
   );
 };

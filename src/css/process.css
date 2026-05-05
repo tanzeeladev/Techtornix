@@ -1,135 +1,275 @@
-.process-section {
-  padding: 110px 40px;
-  background: #ffffff;
-}
-
-.process-container {
-  max-width: 1100px;
-  margin: 0 auto;
-}
-
-.process-heading {
-  text-align: center;
-  max-width: 720px;
-  margin: 0 auto 70px;
-}
-
-.process-heading span {
-  display: inline-flex;
-  padding: 10px 18px;
-  border-radius: 999px;
-  background: #fff1f4;
-  color: #be123c;
-  border: 1px solid #ffd6df;
-  font-size: 14px;
-  font-weight: 700;
-  margin-bottom: 20px;
-}
-
-.process-heading h2 {
-  font-size: 46px;
-  line-height: 1.2;
-  color: #0f172a;
-  margin-bottom: 18px;
-}
-
-.process-heading p {
-  font-size: 17px;
-  line-height: 1.8;
-  color: #475569;
-}
-
-.process-timeline {
+/* ================= SECTION ================= */
+.tt-process-section {
+  padding: 120px 40px;
+  background: linear-gradient(180deg, #050816 0%, #0f172a 100%);
+  color: #f8fafc;
   position: relative;
-  display: flex;
-  flex-direction: column;
-  gap: 28px;
+  overflow: hidden;
 }
 
-.process-timeline::before {
-  content: "";
+/* ================= BACKGROUND ================= */
+.tt-process-grid-bg {
   position: absolute;
-  left: 50%;
-  top: 0;
-  width: 2px;
-  height: 100%;
-  background: linear-gradient(#f3d4dc, #be123c, #f3d4dc);
-  transform: translateX(-50%);
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(34, 211, 238, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(34, 211, 238, 0.05) 1px, transparent 1px);
+  background-size: 70px 70px;
+  opacity: 0.4;
+  animation: ttGridMove 18s linear infinite;
 }
 
-.process-step {
-  width: 50%;
-  display: flex;
-  align-items: center;
-  gap: 20px;
+@keyframes ttGridMove {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 70px 70px;
+  }
+}
+
+.tt-process-glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(90px);
+}
+
+.tt-glow-a {
+  width: 320px;
+  height: 320px;
+  background: rgba(34, 211, 238, 0.18);
+  top: 80px;
+  left: -100px;
+  animation: ttGlowA 6s ease-in-out infinite;
+}
+
+.tt-glow-b {
+  width: 380px;
+  height: 380px;
+  background: rgba(139, 92, 246, 0.18);
+  bottom: 50px;
+  right: -120px;
+  animation: ttGlowB 7s ease-in-out infinite;
+}
+
+@keyframes ttGlowA {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(35px, 25px);
+  }
+}
+
+@keyframes ttGlowB {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(-30px, -25px);
+  }
+}
+
+/* ================= CONTAINER ================= */
+.tt-process-container {
+  max-width: 1200px;
+  margin: 0 auto;
   position: relative;
-}
-
-.process-step:nth-child(odd) {
-  align-self: flex-start;
-  padding-right: 45px;
-  flex-direction: row-reverse;
-}
-
-.process-step:nth-child(even) {
-  align-self: flex-end;
-  padding-left: 45px;
-}
-
-.process-number {
-  min-width: 58px;
-  height: 58px;
-  border-radius: 18px;
-  background: linear-gradient(135deg, #be123c, #9f1239);
-  color: #ffffff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 800;
-  box-shadow: 0 14px 30px rgba(190, 18, 60, 0.25);
   z-index: 2;
 }
 
-.process-content {
-  background: linear-gradient(180deg, #ffffff, #fff7f9);
-  border: 1px solid #f3d4dc;
-  border-radius: 24px;
-  padding: 24px;
-  box-shadow: 0 18px 45px rgba(190, 18, 60, 0.08);
+/* ================= HEADING ================= */
+.tt-process-heading {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 75px;
 }
 
-.process-content h3 {
-  font-size: 21px;
-  color: #0f172a;
-  margin-bottom: 10px;
+.tt-process-heading span {
+  display: inline-flex;
+  padding: 10px 18px;
+  border-radius: 999px;
+  background: rgba(34, 211, 238, 0.12);
+  color: #22d3ee;
+  border: 1px solid rgba(34, 211, 238, 0.25);
+  font-size: 14px;
+  font-weight: 900;
+  margin-bottom: 20px;
 }
 
-.process-content p {
+.tt-process-heading h2 {
+  font-size: 48px;
+  line-height: 1.15;
+  letter-spacing: -1.4px;
+  margin-bottom: 18px;
+  color: #f8fafc;
+}
+
+.tt-process-heading p {
+  color: #cbd5e1;
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+/* ================= BOARD ================= */
+.tt-process-board {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+  position: relative;
+}
+
+/* ================= TRACK LINE ANIMATION ================= */
+.tt-process-track {
+  position: absolute;
+  left: 8%;
+  right: 8%;
+  top: 68px;
+  height: 2px;
+  background: rgba(34, 211, 238, 0.18);
+  overflow: hidden;
+  border-radius: 999px;
+}
+
+.tt-process-track::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: 35%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #22d3ee,
+    #8b5cf6,
+    #ec4899,
+    transparent
+  );
+  animation: ttTrackFlow 3s linear infinite;
+  box-shadow: 0 0 22px rgba(34, 211, 238, 0.6);
+}
+
+@keyframes ttTrackFlow {
+  0% {
+    transform: translateX(-120%);
+  }
+  100% {
+    transform: translateX(320%);
+  }
+}
+
+/* ================= CARD ================= */
+.tt-process-node {
+  background: rgba(8, 13, 33, 0.8);
+  border: 1px solid rgba(34, 211, 238, 0.25);
+  border-radius: 30px;
+  padding: 30px;
+  min-height: 330px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.4);
+  transition: 0.35s ease;
+}
+
+.tt-process-node:hover {
+  border-color: #22d3ee;
+  box-shadow: 0 0 30px rgba(34, 211, 238, 0.2);
+}
+
+/* ================= ORB ================= */
+.tt-node-orb {
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  padding: 2px;
+  background: conic-gradient(from 0deg, #22d3ee, #8b5cf6, #ec4899, #22d3ee);
+  margin-bottom: 24px;
+}
+
+.tt-node-icon {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: #050816;
+  color: #22d3ee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tt-node-icon svg {
+  width: 26px;
+  height: 26px;
+}
+
+/* ================= STEP ================= */
+.tt-node-step {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  color: rgba(255, 255, 255, 0.06);
+  font-size: 44px;
+  font-weight: 1000;
+}
+
+/* ================= TAG ================= */
+.tt-node-tag {
+  display: inline-flex;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(34, 211, 238, 0.12);
+  color: #22d3ee;
+  border: 1px solid rgba(34, 211, 238, 0.2);
+  font-size: 12px;
+  font-weight: 900;
+  margin-bottom: 18px;
+}
+
+/* ================= TEXT ================= */
+.tt-process-node h3 {
+  font-size: 24px;
+  margin-bottom: 12px;
+  color: #f8fafc;
+}
+
+.tt-process-node p {
+  color: #cbd5e1;
   font-size: 15px;
   line-height: 1.7;
-  color: #475569;
 }
 
-@media (max-width: 800px) {
-  .process-heading h2 {
-    font-size: 34px;
+/* ================= CARD BOTTOM LINE ================= */
+.tt-node-line {
+  height: 4px;
+  margin-top: 24px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #22d3ee, #8b5cf6, #ec4899);
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 1050px) {
+  .tt-process-board {
+    grid-template-columns: repeat(2, 1fr);
   }
 
-  .process-timeline::before {
-    left: 28px;
+  .tt-process-track {
+    display: none;
+  }
+}
+
+@media (max-width: 650px) {
+  .tt-process-section {
+    padding: 90px 24px;
   }
 
-  .process-step,
-  .process-step:nth-child(odd),
-  .process-step:nth-child(even) {
-    width: 100%;
-    align-self: stretch;
-    padding: 0 0 0 70px;
-    flex-direction: row;
+  .tt-process-heading h2 {
+    font-size: 36px;
   }
 
-  .process-number {
-    position: absolute;
-    left: 0;
+  .tt-process-board {
+    grid-template-columns: 1fr;
+  }
+
+  .tt-process-node {
+    min-height: auto;
   }
 }

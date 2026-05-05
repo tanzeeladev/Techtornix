@@ -81,9 +81,16 @@
   z-index: 2;
 }
 
-/* LEFT */
+/* LEFT TEXT */
+.why-left {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
 .section-badge {
   display: inline-flex;
+  width: fit-content;
   padding: 10px 18px;
   border-radius: 999px;
   background: rgba(34, 211, 238, 0.1);
@@ -91,15 +98,15 @@
   border: 1px solid rgba(34, 211, 238, 0.25);
   font-size: 14px;
   font-weight: 900;
-  margin-bottom: 24px;
+  margin-bottom: 10px;
 }
 
 .why-left h2 {
   color: #f8fafc;
-  font-size: 52px;
-  line-height: 1.1;
-  letter-spacing: -2px;
-  margin-bottom: 22px;
+  font-size: 48px;
+  line-height: 1.2;
+  letter-spacing: -1px;
+  margin-bottom: 4px;
 }
 
 .why-left h2 span {
@@ -110,112 +117,10 @@
 
 .why-left p {
   color: #cbd5e1;
-  font-size: 18px;
-  line-height: 1.8;
-  margin-bottom: 30px;
-}
-
-.trust-metrics {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 14px;
-  margin-bottom: 34px;
-}
-
-.metric {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  color: #cbd5e1;
-  font-weight: 800;
-  font-size: 14px;
-  padding: 10px 14px;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(34, 211, 238, 0.18);
-}
-
-.metric svg {
-  color: #22d3ee;
-}
-
-/* QUALITY CARD */
-.quality-card {
-  max-width: 430px;
-  padding: 26px;
-  border-radius: 28px;
-  background: rgba(8, 13, 33, 0.82);
-  border: 1px solid rgba(34, 211, 238, 0.22);
-  backdrop-filter: blur(18px);
-  box-shadow:
-    0 30px 80px rgba(0, 0, 0, 0.38),
-    0 0 40px rgba(34, 211, 238, 0.1);
-}
-
-.quality-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 24px;
-}
-
-.quality-header span {
-  color: #94a3b8;
-  font-size: 14px;
-  font-weight: 800;
-}
-
-.quality-header h3 {
-  color: #f8fafc;
-  font-size: 46px;
-  margin-top: 5px;
-}
-
-.pulse-dot {
-  width: 18px;
-  height: 18px;
-  border-radius: 50%;
-  background: #22d3ee;
-  box-shadow: 0 0 25px rgba(34, 211, 238, 0.8);
-  animation: pulseDot 1.8s infinite;
-}
-
-@keyframes pulseDot {
-  0%, 100% {
-    transform: scale(1);
-    opacity: 0.8;
-  }
-  50% {
-    transform: scale(1.4);
-    opacity: 1;
-  }
-}
-
-.quality-progress {
-  margin-bottom: 20px;
-}
-
-.quality-progress div:first-child {
-  display: flex;
-  justify-content: space-between;
-  color: #cbd5e1;
-  font-size: 14px;
-  font-weight: 800;
-  margin-bottom: 9px;
-}
-
-.progress-line {
-  height: 10px;
-  background: rgba(255, 255, 255, 0.07);
-  border-radius: 999px;
-  overflow: hidden;
-}
-
-.progress-line span {
-  display: block;
-  height: 100%;
-  background: linear-gradient(90deg, #22d3ee, #8b5cf6, #ec4899);
-  border-radius: 999px;
+  font-size: 17px;
+  line-height: 1.7;
+  max-width: 500px;
+  margin: 0;
 }
 
 /* RIGHT FEATURE GRID */
@@ -333,8 +238,17 @@
     gap: 60px;
   }
 
+  .why-left {
+    text-align: center;
+    align-items: center;
+  }
+
   .why-left h2 {
     font-size: 42px;
+  }
+
+  .why-left p {
+    max-width: 100%;
   }
 }
 

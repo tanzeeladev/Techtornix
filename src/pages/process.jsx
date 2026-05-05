@@ -1,63 +1,96 @@
 import React from "react";
 import { motion } from "framer-motion";
-import "../css/Process.css";
+import { Search, PenTool, Code2, Rocket } from "lucide-react";
+import "../css/process.css"
 
 const steps = [
   {
     step: "01",
-    title: "Understand Your Idea",
-    desc: "We discuss your business goals, features, audience, and project requirements.",
+    icon: <Search />,
+    title: "Discover",
+    desc: "We analyze your goals, users, features, and business requirements.",
+    tag: "Strategy",
   },
   {
     step: "02",
-    title: "Design the Experience",
-    desc: "We create a clean, modern layout focused on user experience and conversions.",
+    icon: <PenTool />,
+    title: "Design",
+    desc: "We create clean layouts, user flows, and modern interface concepts.",
+    tag: "UI/UX",
   },
   {
     step: "03",
-    title: "Build with Clean Code",
-    desc: "We develop responsive, fast, and scalable solutions using modern technologies.",
+    icon: <Code2 />,
+    title: "Develop",
+    desc: "We build fast, scalable, and responsive solutions with clean code.",
+    tag: "Engineering",
   },
   {
     step: "04",
-    title: "Launch & Support",
-    desc: "We deploy your project and provide support to keep everything running smoothly.",
+    icon: <Rocket />,
+    title: "Launch",
+    desc: "We test, optimize, deploy, and support your product after release.",
+    tag: "Delivery",
   },
 ];
 
 const Process = () => {
   return (
-    <section className="process-section" id="process">
-      <div className="process-container">
+    <section className="tt-process-section" id="process">
+      <div className="tt-process-grid-bg"></div>
+      <div className="tt-process-glow tt-glow-a"></div>
+      <div className="tt-process-glow tt-glow-b"></div>
+
+      <div className="tt-process-container">
         <motion.div
-          className="process-heading"
-          initial={{ opacity: 0, y: 30 }}
+          className="tt-process-heading"
+          initial={{ opacity: 0, y: 35 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
         >
-          <span>Our Process</span>
-          <h2>From Idea to Launch — A Simple Workflow</h2>
+          <span>Digital Workflow</span>
+          <h2>From Idea to Launch Through a Smart Process</h2>
           <p>
-            We follow a clear process so every project stays organized,
-            transparent, and result-focused.
+            A clear, digital-first workflow that keeps every project organized,
+            transparent, and focused on results.
           </p>
         </motion.div>
 
-        <div className="process-timeline">
+        <div className="tt-process-board">
+          <div className="tt-process-track"></div>
+
           {steps.map((item, index) => (
             <motion.div
-              className="process-step"
+              className="tt-process-node"
               key={index}
-              initial={{ opacity: 0, x: index % 2 === 0 ? -40 : 40 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 45, scale: 0.92 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.55, delay: index * 0.12 }}
+              whileHover={{ y: -10, scale: 1.03 }}
             >
-              <div className="process-number">{item.step}</div>
-              <div className="process-content">
-                <h3>{item.title}</h3>
-                <p>{item.desc}</p>
-              </div>
+              <motion.div
+                className="tt-node-orb"
+                animate={{ rotate: 360 }}
+                transition={{ duration: 14, repeat: Infinity, ease: "linear" }}
+              >
+                <div className="tt-node-icon">{item.icon}</div>
+              </motion.div>
+
+              <span className="tt-node-step">{item.step}</span>
+              <span className="tt-node-tag">{item.tag}</span>
+
+              <h3>{item.title}</h3>
+              <p>{item.desc}</p>
+
+              <motion.div
+                className="tt-node-line"
+                initial={{ width: 0 }}
+                whileInView={{ width: "72%" }}
+                viewport={{ once: true }}
+                transition={{ duration: 1, delay: index * 0.15 }}
+              />
             </motion.div>
           ))}
         </div>

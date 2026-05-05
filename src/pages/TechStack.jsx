@@ -3,9 +3,6 @@ import { motion } from "framer-motion";
 import { FaReact, FaNodeJs, FaDatabase, FaFigma } from "react-icons/fa";
 import { SiFirebase, SiExpress } from "react-icons/si";
 import { MdApi, MdOutlineDevices } from "react-icons/md";
-
-import "../css/TechStack.css";
-
 import "../css/TechStack.css";
 
 const techs = [
@@ -16,20 +13,23 @@ const techs = [
   { name: "Express.js", icon: <SiExpress /> },
   { name: "REST APIs", icon: <MdApi /> },
   { name: "UI/UX", icon: <FaFigma /> },
-//   { name: "Responsive Design", icon: <RiResponsiveLine /> },
-{ name: "Responsive Design", icon: <MdOutlineDevices /> },
+  { name: "Responsive Design", icon: <MdOutlineDevices /> },
 ];
 
 const TechStack = () => {
   return (
     <section className="tech-section" id="tech">
-      <div className="tech-container">
+      <div className="tech-grid-bg"></div>
+      <div className="tech-glow tech-glow-one"></div>
+      <div className="tech-glow tech-glow-two"></div>
 
+      <div className="tech-container">
         <motion.div
           className="tech-heading"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
         >
           <span>Tech Stack</span>
           <h2>Technologies We Use to Build Reliable Products</h2>
@@ -44,16 +44,17 @@ const TechStack = () => {
             <motion.div
               className="tech-pill"
               key={index}
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ delay: index * 0.08 }}
+              initial={{ opacity: 0, scale: 0.85, y: 20 }}
+              whileInView={{ opacity: 1, scale: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.45, delay: index * 0.08 }}
+              whileHover={{ y: -6 }}
             >
               <span className="tech-icon">{tech.icon}</span>
-              {tech.name}
+              <span>{tech.name}</span>
             </motion.div>
           ))}
         </div>
-
       </div>
     </section>
   );
