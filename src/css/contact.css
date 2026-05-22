@@ -1,0 +1,291 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.contact-section {
+  margin-top: 0px; 
+  padding: 170px 40px 100px 40px; 
+  background: radial-gradient(circle at center, #07504d 0%, #033230 70%, #022423 100%);
+  color: #fff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-container {
+  display: flex;
+  max-width: 1100px;
+  width: 100%;
+  margin: 0 auto;
+  gap: 50px;
+  align-items: center;
+}
+
+/* ==========================================================================
+   Left panel 
+   ========================================================================== */
+.contact-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.connect-tag {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 6px 16px;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  font-weight: 600;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #11ebd9;
+  margin-bottom: 25px;
+}
+
+.contact-left h2 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  line-height: 1.15;
+  margin-bottom: 20px;
+}
+
+.contact-left .highlight-text {
+  color: #11ebd9;
+}
+
+.sub-heading {
+  font-size: 1.1rem;
+  color: #b3d1d0;
+  margin-bottom: 40px;
+  max-width: 380px;
+}
+
+/* Info Items Section */
+.contact-info-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-top: 10px;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  transition: transform 0.3s ease;
+}
+
+.info-item:hover {
+  transform: translateX(5px);
+}
+
+.info-icon-box {
+  background: rgba(17, 235, 217, 0.1);    
+  border: 1px solid rgba(17, 235, 217, 0.25); 
+  color: #11ebd9;                         
+  width: 50px;                            
+  height: 50px;
+  border-radius: 14px;                    
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;                      
+  box-shadow: 0 0 15px rgba(17, 235, 217, 0.05); 
+}
+
+.info-label {
+  display: block;
+  font-size: 0.75rem;
+  color: #11ebd9;                         
+  font-weight: 700;
+  text-transform: uppercase;              
+  letter-spacing: 1.5px;                  
+  margin-bottom: 2px;
+}
+
+.info-value {
+  font-size: 1.1rem;
+  font-weight: 600;                       
+  color: #ffffff;                         
+  line-height: 1.2;
+}
+
+/* ==========================================================================
+   Right panel (Form Card)
+   ========================================================================== */
+.contact-right {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.form-card {
+  width: 100%;
+  max-width: 440px;
+  background: #ffffff; 
+  border: 1px solid rgba(255, 255, 255, 0.1); 
+  padding: 40px;
+  border-radius: 24px;
+  box-shadow: 15px 25px 50px rgba(0, 0, 0, 0.65), 
+              5px 10px 20px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 20px 35px 60px rgba(0, 0, 0, 0.75), 
+              8px 15px 25px rgba(0, 0, 0, 0.5);
+}
+
+.form-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.chat-icon-box {
+  background: #e6f9f8; 
+  color: #0caba0; 
+  width: 45px;
+  height: 45px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+}
+
+.form-header h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #1a202c; 
+}
+
+.form-header p {
+  font-size: 0.85rem;
+  color: #718096; 
+  margin-top: 2px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Input Fields Container */
+.input-group {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-icon {
+  position: absolute;
+  left: 18px;
+  color: #a0aec0; 
+  font-size: 1.1rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 16px 16px 16px 50px;
+  background: #f7fafc; 
+  border: 1px solid #e2e8f0; 
+  border-radius: 12px;
+  color: #2d3748; 
+  font-size: 0.95rem;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #0caba0;
+  background: #ffffff;
+  box-shadow: 0 0 10px rgba(12, 171, 160, 0.1);
+}
+
+.textarea-group {
+  align-items: flex-start;
+}
+
+.textarea-icon {
+  top: 18px;
+}
+
+.contact-form textarea {
+  resize: none;
+  min-height: 150px;
+}
+
+/* Button */
+.submit-btn {
+  width: 100%;
+  padding: 16px;
+  font-weight: 600;
+  font-size: 1rem;
+  background: #0caba0; 
+  color: #ffffff;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+}
+
+.submit-btn:hover {
+  background: #0a968c;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(12, 171, 160, 0.3);
+}
+
+.btn-arrow {
+  font-size: 0.9rem;
+  transition: transform 0.3s ease;
+}
+
+.submit-btn:hover .btn-arrow {
+  transform: translateX(3px);
+}
+
+/* Responsive / Mobile Design */
+@media (max-width: 900px) {
+  .contact-section {
+    padding: 130px 20px 60px 20px; 
+  }
+  .contact-container {
+    flex-direction: column;
+    gap: 40px;
+  }
+  .contact-left {
+    align-items: center;
+    text-align: center;
+  }
+  .contact-left h2 {
+    font-size: 2.8rem;
+  }
+  .sub-heading {
+    max-width: 100%;
+  }
+  .contact-info-list {
+    align-items: flex-start;
+    text-align: left;
+  }
+  .contact-right {
+    justify-content: center;
+  }
+}

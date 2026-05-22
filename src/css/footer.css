@@ -1,0 +1,160 @@
+.arch-footer {
+  background: #080a0f;
+  padding: 120px 5% 40px;
+  position: relative;
+  overflow: hidden;
+  font-family: 'Inter', sans-serif;
+  color: #fff;
+}
+
+/* The Background Watermark - Very "High-End Agency" Look */
+.footer-watermark {
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  font-size: 25vw;
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.02);
+  user-select: none;
+  line-height: 0.8;
+  z-index: 1;
+}
+
+.footer-container {
+  max-width: 1300px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 5;
+}
+
+.footer-main-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 100px;
+  margin-bottom: 120px;
+}
+
+/* Info Section */
+.footer-logo {
+  font-size: 32px;
+  font-weight: 800;
+  margin-bottom: 25px;
+}
+
+.footer-logo span {
+  color: #0ebab1;
+}
+
+.footer-mission {
+  color: #94a3b8;
+  font-size: 18px;
+  line-height: 1.6;
+  max-width: 450px;
+  margin-bottom: 35px;
+}
+
+.footer-social-links {
+  display: flex;
+  gap: 25px;
+}
+
+.footer-social-links a {
+  color: #64748b;
+  font-size: 22px;
+  transition: all 0.3s ease;
+}
+
+.footer-social-links a:hover {
+  color: #0ebab1;
+  transform: translateY(-5px);
+}
+
+/* Contact Glass-Card */
+.footer-contact-card {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 60px;
+  border-radius: 24px;
+  flex-shrink: 0;
+}
+
+.card-label {
+  display: block;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: #0ebab1;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.footer-contact-card h3 {
+  font-size: 34px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 30px;
+}
+
+.contact-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  border-bottom: 2px solid #0ebab1;
+  padding-bottom: 5px;
+  transition: all 0.3s ease;
+}
+
+.contact-btn:hover {
+  gap: 20px;
+  color: #0ebab1;
+}
+
+/* Meta Area */
+.footer-meta-area {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 40px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.meta-links {
+  display: flex;
+  gap: 40px;
+}
+
+.meta-links a {
+  color: #64748b;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.meta-links a:hover { color: #fff; }
+
+.meta-copyright {
+  color: #475569;
+  font-size: 14px;
+}
+
+.meta-copyright span {
+  color: #0ebab1;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  .footer-main-wrapper { flex-direction: column; align-items: flex-start; gap: 60px; }
+  .footer-contact-card { width: 100%; padding: 40px; }
+}
+
+@media (max-width: 768px) {
+  .footer-meta-area { flex-direction: column; gap: 30px; text-align: center; }
+  .meta-links { gap: 20px; }
+  .footer-logo { font-size: 28px; }
+}

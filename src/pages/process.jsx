@@ -1,96 +1,106 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Search, PenTool, Code2, Rocket } from "lucide-react";
-import "../css/process.css"
+import { Crosshair, PenTool, Terminal, Zap, ShieldCheck, LifeBuoy } from "lucide-react";
+import "../css/process.css";
 
-const steps = [
+const processSteps = [
   {
-    step: "01",
-    icon: <Search />,
-    title: "Discover",
-    desc: "We analyze your goals, users, features, and business requirements.",
-    tag: "Strategy",
+    num: "01",
+    phase: "PHASE_DISCOVERY",
+    title: "Deep Analysis",
+    desc: "Market research and data-driven audits of user behavior.",
+    icon: <Crosshair size={20} />,
+    color: "#0ebab1"
   },
   {
-    step: "02",
-    icon: <PenTool />,
-    title: "Design",
-    desc: "We create clean layouts, user flows, and modern interface concepts.",
-    tag: "UI/UX",
+    num: "02",
+    phase: "PHASE_PROTOTYPING",
+    title: "Visual Logic",
+    desc: "Setting the perfect balance between aesthetics and architecture.",
+    icon: <PenTool size={20} />,
+    color: "#0ebab1"
   },
   {
-    step: "03",
-    icon: <Code2 />,
-    title: "Develop",
-    desc: "We build fast, scalable, and responsive solutions with clean code.",
-    tag: "Engineering",
+    num: "03",
+    phase: "PHASE_PRODUCTION",
+    title: "Core Dev",
+    desc: "High-performance code designed to handle heavy traffic loads.",
+    icon: <Terminal size={20} />,
+    color: "#0ebab1"
   },
   {
-    step: "04",
-    icon: <Rocket />,
-    title: "Launch",
-    desc: "We test, optimize, deploy, and support your product after release.",
-    tag: "Delivery",
+    num: "04",
+    phase: "PHASE_SECURITY",
+    title: "Quality Audit",
+    desc: "Rigorous testing and implementation of security protocols.",
+    icon: <ShieldCheck size={20} />,
+    color: "#0ebab1"
   },
+  {
+    num: "05",
+    phase: "PHASE_OPTIMIZATION",
+    title: "Live & Scale",
+    desc: "Continuous delivery and advanced deployment automation.",
+    icon: <Zap size={20} />,
+    color: "#0ebab1"
+  },
+  {
+    num: "06",
+    phase: "PHASE_MAINTENANCE",
+    title: "Post Launch",
+    desc: "24/7 monitoring and scalable feature updates for longevity.",
+    icon: <LifeBuoy size={20} />,
+    color: "#0ebab1"
+  }
 ];
 
 const Process = () => {
   return (
-    <section className="tt-process-section" id="process">
-      <div className="tt-process-grid-bg"></div>
-      <div className="tt-process-glow tt-glow-a"></div>
-      <div className="tt-process-glow tt-glow-b"></div>
-
-      <div className="tt-process-container">
-        <motion.div
-          className="tt-process-heading"
-          initial={{ opacity: 0, y: 35 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
-        >
-          <span>Digital Workflow</span>
-          <h2>From Idea to Launch Through a Smart Process</h2>
-          <p>
-            A clear, digital-first workflow that keeps every project organized,
-            transparent, and focused on results.
+    <section className="proc-section" id="process">
+      <div className="proc-grid-overlay"></div>
+      
+      <div className="proc-container">
+        <div className="proc-header">
+          <motion.div 
+            initial={{ width: 0 }}
+            whileInView={{ width: "100px" }}
+            className="proc-line-decor"
+          />
+          <h2 className="proc-main-title">
+            THE <span>ENGINEERING</span> WORKFLOW
+          </h2>
+          <p className="proc-sub-text">
+            Our process is fast, transparent, and result-oriented.
           </p>
-        </motion.div>
+        </div>
 
-        <div className="tt-process-board">
-          <div className="tt-process-track"></div>
-
-          {steps.map((item, index) => (
-            <motion.div
-              className="tt-process-node"
-              key={index}
-              initial={{ opacity: 0, y: 45, scale: 0.92 }}
-              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+        <div className="proc-blueprint-grid">
+          {processSteps.map((item, i) => (
+            <motion.div 
+              key={i}
+              className="proc-card"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: i * 0.1 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.55, delay: index * 0.12 }}
-              whileHover={{ y: -10, scale: 1.03 }}
             >
-              <motion.div
-                className="tt-node-orb"
-                animate={{ rotate: 360 }}
-                transition={{ duration: 14, repeat: Infinity, ease: "linear" }}
-              >
-                <div className="tt-node-icon">{item.icon}</div>
-              </motion.div>
+              <div className="proc-card-head">
+                <span className="proc-phase">{item.phase}</span>
+                <span className="proc-num">{item.num}</span>
+              </div>
 
-              <span className="tt-node-step">{item.step}</span>
-              <span className="tt-node-tag">{item.tag}</span>
+              <div className="proc-icon-wrap">
+                {item.icon}
+                <div className="proc-icon-pulse"></div>
+              </div>
 
-              <h3>{item.title}</h3>
-              <p>{item.desc}</p>
-
-              <motion.div
-                className="tt-node-line"
-                initial={{ width: 0 }}
-                whileInView={{ width: "72%" }}
-                viewport={{ once: true }}
-                transition={{ duration: 1, delay: index * 0.15 }}
-              />
+              <h3 className="proc-card-title">{item.title}</h3>
+              <p className="proc-card-desc">{item.desc}</p>
+              
+              <div className="proc-card-footer">
+                <div className="proc-status-dot"></div>
+                <span className="proc-status-text">Ready for Execution</span>
+              </div>
             </motion.div>
           ))}
         </div>
