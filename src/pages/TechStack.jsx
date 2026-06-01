@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { FaReact, FaNodeJs, FaDatabase, FaFigma } from "react-icons/fa";
 import { SiFirebase, SiExpress } from "react-icons/si";
 import { MdApi, MdOutlineDevices } from "react-icons/md";
-import "../css/TechStack.css";
+import "../css/Techstack.css";
 
 const techs = [
   { name: "React.js", icon: <FaReact /> },
